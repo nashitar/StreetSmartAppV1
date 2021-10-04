@@ -1,112 +1,58 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { ImageBackground, Image, StyleSheet, Text, View } from 'react-native';
+import Task from './components/task';
+import task from './components/task';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+    <ImageBackground style={styles.container} 
+    source={require('C:/Users/Steve Pasch/OneDrive/Desktop/SXS/todoList/starrysky.jpeg')}>
+      
+      
+        
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+        <View style = {styles.tasksWrapper}>
+        <Text style = {styles.sectionTitle}>STREET {'\n'} SMART</Text>
+          <View style={styles.hero}>
+            <Image source = {require('C:/Users/Steve Pasch/OneDrive/Desktop/SXS/todoList/Blue_Superhero.png')} 
+            style = {{ width: 300, height: 300 }}/>
+          </View>
+          
+          <View style = {styles.items}>
+            {/*This is where the tasks will go */}
+            <Task text={'Login'}/>
+            <Task text={'Sign Up'}/>
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+          </View>
         </View>
-      </ScrollView>
-    </SafeAreaView>
+    </ImageBackground>
   );
-};
+}
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  container: {
+    flex: 1,
+  },
+  tasksWrapper: {
+    paddingTop: 50,
+    paddingHorizontal: 20,
+  },
+
+  hero: {
+    alignSelf:'center'
   },
   sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+    textAlign: 'center',
+    fontSize:60,
+    fontWeight: 'bold',
+    color: '#4CB5F1',
+    fontStyle: 'italic',
+    fontFamily: 'Montserrat-Black.ttf',
+    
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  items: {
+    marginTop: 10,
   },
-  highlight: {
-    fontWeight: '700',
-  },
+  
 });
-
-export default App;
