@@ -7,10 +7,7 @@ import task from './components/task';
 export default function App() {
   return (
     <ImageBackground style={styles.container} 
-    source={require('C:/Users/Steve Pasch/OneDrive/Desktop/SXS/todoList/starrysky.jpeg')}>
-      
-      
-        
+    source={require('./images/starrysky.jpeg')}>
 
         <View style = {styles.tasksWrapper}>
         <Text style = {styles.sectionTitle}>STREET {'\n'} SMART</Text>
