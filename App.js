@@ -15,7 +15,7 @@ export default function App() {
         <View style = {styles.tasksWrapper}>
         <Text style = {styles.sectionTitle}>STREET {'\n'} SMART</Text>
           <View style={styles.hero}>
-            <Image source = {require('C:/Users/Steve Pasch/OneDrive/Desktop/SXS/todoList/Blue_Superhero.png')} 
+            <Image source = {require('./images/Blue_Superhero.png')} 
             style = {{ width: 300, height: 300 }}/>
           </View>
           
